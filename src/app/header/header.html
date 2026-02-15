@@ -1,1 +1,63 @@
-<p>header works!</p>
+<div class="layout">
+  <!-- Sidebar -->
+  <nav class="sidebar bg-dark" [class.collapsed]="isCollapsed">
+    
+    <!-- Header -->
+    <div class="sidebar-header">
+      @if (!isCollapsed) {
+        <span class="logo">EMPLOYEE</span>
+      }
+
+      <!-- Hamburger -->
+      <button class="toggle-btn" (click)="toggleSidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Menu -->
+    <ul class="nav flex-column mt-4">
+      <li class="nav-item">
+        <a routerLink="/dashboard" class="nav-link">
+          <i class="bi bi-speedometer2"></i>
+          @if (!isCollapsed) {
+            <span>Dashboard</span>
+          }
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/employees" class="nav-link">
+          <i class="bi bi-people"></i>
+          @if (!isCollapsed) {
+            <span>Employees</span>
+          }
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/department" class="nav-link">
+          <i class="bi bi-building"></i>
+          @if (!isCollapsed) {
+            <span>Department</span>
+          }
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/settings" class="nav-link">
+          <i class="bi bi-gear"></i>
+          @if (!isCollapsed) {
+            <span>Settings</span>
+          }
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Content -->
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
