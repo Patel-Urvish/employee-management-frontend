@@ -47,7 +47,11 @@
 @if (showModal) {
   <div class="modal-backdrop-custom">
     <div class="modal-custom">
-      <h5>Add Department</h5>
+      @if (isEdit) {
+        <h5>Edit Department</h5>
+      } @else {
+        <h5>Add Department</h5>
+      }
 
       <div class="mb-3">
         <label class="form-label">Department Name</label>

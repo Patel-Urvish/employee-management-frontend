@@ -67,7 +67,7 @@ export class Department {
     newDept.departmentId = this.departmentObj.departmentId;
     newDept.departmentName = this.departmentObj.departmentName;
     newDept.isActive = this.departmentObj.isActive;
-    debugger;
+  
     this.departmentService.updateDepartment(newDept).subscribe({
       next: (res: any) => {
         alert(res.message || 'Department updated successfully!');
