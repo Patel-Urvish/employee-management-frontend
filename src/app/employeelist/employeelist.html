@@ -1,1 +1,50 @@
-<p>employeelist works!</p>
+<div class="container mt-4">
+  <div class="card shadow">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">Employee List</h5>
+    </div>
+
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <th>City</th>
+              <th>Designation</th>
+              <th>Department</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (emp of employeeList; track emp.employeeId) {
+              <tr>
+                <td>{{ emp.employeeId }}</td>
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.contact }}</td>
+                <td>{{ emp.email }}</td>
+                <td>{{ emp.city }}</td>
+                <td>{{ emp.designationName }}</td>
+                <td>{{ emp.departmentName }}</td>
+
+                <td>
+                  <button class="btn btn-sm btn-warning me-2" (click)="editEmployee(emp)">
+                    Edit
+                  </button>
+
+                  <button class="btn btn-sm btn-danger" (click)="deleteEmployee(emp.employeeId)">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
