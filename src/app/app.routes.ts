@@ -45,7 +45,8 @@ export const routes: Routes = [
             {
                 path:'designation',
                 component:Designation
-            }
+            },
+            
         ]
     }
 ];

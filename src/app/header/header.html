@@ -71,6 +71,14 @@
           }
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()">
+          <i class="bi bi-gear"></i>
+          @if (!isCollapsed) {
+            <span>Logout</span>
+          }
+        </a>
+      </li>
     </ul>
   </nav>
 
